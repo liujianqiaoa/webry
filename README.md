@@ -5,3 +5,7 @@ docker build -t my-app:v1 .
 docker images
 
 docker run -d -p 8080:8080 --name web my-app:v1
+
+docker logs web
+
+docker logs --tail 20 web
