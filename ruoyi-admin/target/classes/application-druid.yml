@@ -5,10 +5,14 @@ spring:
         driverClassName: com.mysql.cj.jdbc.Driver
         druid:
             # 主库数据源
+#            master:
+#                url: jdbc:mysql://127.0.0.1:3306/ry?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=Asia/Shanghai
+#                username: root
+#                password: root
             master:
-                url: jdbc:mysql://127.0.0.1:3306/ry?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=Asia/Shanghai
+                url: jdbc:mysql://gz-cdb-q6ltjj9p.sql.tencentcdb.com:21735/dreamRoom?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
                 username: root
-                password: root
+                password: PpfCddn8
             # 从库数据源
             slave:
                 # 从数据源开关/默认关闭

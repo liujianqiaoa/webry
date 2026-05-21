@@ -18,6 +18,7 @@ RUN mkdir /var/run/sshd && \
     sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
 
 # 3. 把 SQL 文件夹、Jar 包和启动脚本全部复制进去
+RUN echo "=== 当前构建期的 WORKDIR 路径是: $(pwd) ==="
 COPY sql /app/sql
 COPY ruoyi-admin/target/ruoyi-admin.jar app.jar
 COPY entrypoint.sh /app/entrypoint.sh
