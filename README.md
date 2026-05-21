@@ -25,7 +25,20 @@ mvn package
 
 
 git add .;git diff --cached > /app/p1-r1-gpt5.4.patch
-git add .;git diff --cached > /app/p1-r2-gemini3.1.patch
+git add .;git diff --cached > /app/p1-r2-gemini-3.1.patch
+git add .;git diff --cached > /app/p1-r3-deepseek-v4.patch
+git add .;git diff --cached > /app/p1-r4-doubao-seed-2.0.patch
+git add .;git diff --cached > /app/p1-r5-minmax-m2.7.patch
 
+
+
+docker cp env-1:/app/p1-r1-gpt5.4.patch ./
+docker cp env-1:/app/p1-r2-gemini-3.1.patch ./
+docker cp env-1:/app/p1-r3-deepseek-v4.patch ./
+docker cp env-1:/app/p1-r1-doubao-seed-2.0.patch ./
+docker cp env-1:/app/p1-r5-minmax-m2.7.patch ./
+
+
+java -Xms256m -Xmx512m -Dfile.encoding=utf-8 -Djava.awt.headless=true -jar ./ruoyi-admin/target/ruoyi-admin.jar
 
 
